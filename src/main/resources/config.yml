@@ -1,0 +1,16 @@
+# Spawn Reasons (1.9)
+# https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html
+#
+# Compatible with 1.9.2
+
+StopMobSpawn:
+  # A mob will not spawn if it is caused by any of these reasons
+  SpawnReason:
+    - SPAWNER
+
+RemoveAI:
+  # Mobs spawn for these reasons will not spawn with an AI
+  SpawnReason:
+    - SPAWNER_EGG
+
+PermissionDenied: '&cYou dont have permission to do that! :('
