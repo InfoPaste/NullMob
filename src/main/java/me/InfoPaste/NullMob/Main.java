@@ -23,12 +23,13 @@ public class Main extends JavaPlugin {
 
         this.plugin = this;
 
-        serverCompatibility();
         loadCommands();
 
         Config.setup(this);
 
         registerEvents(this, new SpawnListener());
+
+        serverCompatibility();
 
     }
 
@@ -39,8 +40,11 @@ public class Main extends JavaPlugin {
     private void serverCompatibility() {
         String serverVersion = ReflectionUtil.getVersion();
 
-        if (!serverVersion.contains("1_9")) {
-            Bukkit.getPluginManager().disablePlugin(this);
+        if (serverVersion.equalsIgnoreCase("v1_9_R1") || serverVersion.equalsIgnoreCase("v1_9_R2")) {
+            getLogger().info("You are using a supported version!");
+        } else {
+            getLogger().info("You are not using a supported version (" + serverVersion + ")");
+            getServer().getPluginManager().disablePlugin(this);
         }
     }
 

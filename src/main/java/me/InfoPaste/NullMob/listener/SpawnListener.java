@@ -1,6 +1,5 @@
 package me.InfoPaste.NullMob.listener;
 
-import com.sun.org.apache.xerces.internal.xs.StringList;
 import me.InfoPaste.NullMob.api.MobAI;
 import me.InfoPaste.NullMob.core.Config;
 import org.bukkit.event.EventHandler;

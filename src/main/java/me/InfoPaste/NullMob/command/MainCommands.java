@@ -1,6 +1,5 @@
 package me.InfoPaste.NullMob.command;
 
-import javafx.scene.text.Text;
 import me.InfoPaste.NullMob.api.MobAI;
 import me.InfoPaste.NullMob.core.Config;
 import me.InfoPaste.NullMob.util.TextUtil;

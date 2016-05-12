@@ -1,5 +1,7 @@
 package me.InfoPaste.NullMob.api;
 
+import me.InfoPaste.NullMob.util.ReflectionUtil;
+import org.bukkit.craftbukkit.libs.joptsimple.internal.Reflection;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
@@ -23,22 +25,41 @@ public class MobAI {
 
     private static void setAI(Entity entity, boolean mobAI) {
         try {
-            net.minecraft.server.v1_9_R1.Entity nmsEntity = ((org.bukkit.craftbukkit.v1_9_R1.entity.CraftEntity) entity).getHandle();
+            String version = ReflectionUtil.getVersion();
 
-            net.minecraft.server.v1_9_R1.NBTTagCompound tag = new net.minecraft.server.v1_9_R1.NBTTagCompound();
-            nmsEntity.c(tag);
+            if (version.equalsIgnoreCase("v1_9_R1")) {
 
-            if (tag == null) {
-                tag = new net.minecraft.server.v1_9_R1.NBTTagCompound();
+                net.minecraft.server.v1_9_R1.Entity nmsEntity = ((org.bukkit.craftbukkit.v1_9_R1.entity.CraftEntity) entity).getHandle();
+
+                net.minecraft.server.v1_9_R1.NBTTagCompound tag = new net.minecraft.server.v1_9_R1.NBTTagCompound();
+                nmsEntity.c(tag);
+
+                if (tag == null) tag = new net.minecraft.server.v1_9_R1.NBTTagCompound();
+
+                nmsEntity.c(tag);
+                if (mobAI) {
+                    tag.setInt("NoAI", 0);
+                } else {
+                    tag.setInt("NoAI", 1);
+                }
+                nmsEntity.f(tag);
+
+            } else if (version.equalsIgnoreCase("v1_9_R2")) {
+
+                net.minecraft.server.v1_9_R2.Entity nmsEntity = ((org.bukkit.craftbukkit.v1_9_R2.entity.CraftEntity) entity).getHandle();
+                net.minecraft.server.v1_9_R2.NBTTagCompound tag = new net.minecraft.server.v1_9_R2.NBTTagCompound();
+                nmsEntity.c(tag);
+
+                if (tag == null) tag = new net.minecraft.server.v1_9_R2.NBTTagCompound();
+
+                nmsEntity.c(tag);
+                if (mobAI) {
+                    tag.setInt("NoAI", 0);
+                } else {
+                    tag.setInt("NoAI", 1);
+                }
+                nmsEntity.f(tag);
             }
-
-            nmsEntity.c(tag);
-            if (mobAI) {
-                tag.setInt("NoAI", 0);
-            } else {
-                tag.setInt("NoAI", 1);
-            }
-            nmsEntity.f(tag);
 
             /*
             Object nmsEntity = entity.getClass().getMethod("getHandle", new Class[0]).invoke(entity);

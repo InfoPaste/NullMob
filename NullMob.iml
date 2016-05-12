@@ -12,7 +12,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.spigotmc:spigot-api:1.9.2-R0.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.spigotmc:spigot-api:1.9.4-R0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: commons-lang:commons-lang:2.6" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.10" level="project" />
@@ -24,15 +24,24 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.yaml:snakeyaml:1.15" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.md-5:bungeecord-chat:1.9-SNAPSHOT" level="project" />
     <orderEntry type="module-library">
-      <library name="Maven: craftbukkit:local.craftbukkit:craftbukkit-1.9.2-R0.1-SNAPSHOT">
+      <library name="Maven: craftbukkitR2:local.craftbukkit:craftbukkit-1.9.4-R0.1-SNAPSHOT">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../BuildTools/CraftBukkit/target/craftbukkit-1.9.2-R0.1-SNAPSHOT.jar!/" />
+          <root url="jar://$MODULE_DIR$/craftbukkit-1.9.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.bukkit:bukkit:1.9.2-R0.1-SNAPSHOT" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: craftbukkitR1:local.craftbukkit:craftbukkit-1.9.2-R0.1-SNAPSHOT">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/craftbukkit-1.9.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.bukkit:bukkit:1.9.4-R0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.sk89q:worldguard:6.0.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.sk89q:worldedit:5.5.8" level="project" />
     <orderEntry type="library" name="Maven: de.schlichtherle:truezip:6.8.3" level="project" />
