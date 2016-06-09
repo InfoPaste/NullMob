@@ -59,6 +59,20 @@ public class MobAI {
                     tag.setInt("NoAI", 1);
                 }
                 nmsEntity.f(tag);
+            } else if (version.equalsIgnoreCase("v1_10_R1")) {
+                net.minecraft.server.v1_10_R1.Entity nmsEntity = ((org.bukkit.craftbukkit.v1_10_R1.entity.CraftEntity) entity).getHandle();
+                net.minecraft.server.v1_10_R1.NBTTagCompound tag = new net.minecraft.server.v1_10_R1.NBTTagCompound();
+                nmsEntity.c(tag);
+
+                if (tag == null) tag = new net.minecraft.server.v1_10_R1.NBTTagCompound();
+
+                nmsEntity.c(tag);
+                if (mobAI) {
+                    tag.setInt("NoAI", 0);
+                } else {
+                    tag.setInt("NoAI", 1);
+                }
+                nmsEntity.f(tag);
             }
 
             /*
@@ -76,7 +90,7 @@ public class MobAI {
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Error occurred in NMS, are you using 1.9?");
+            System.out.println("Error occurred in NMS, what version of Minecraft are you using?");
         }
     }
 }

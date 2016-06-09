@@ -1,14 +1,11 @@
  name: NullMob
- version: 1.0.1
+ version: 1.0.2
  description: Disable AI of mobs
  author: InfoPaste
- website: https://www.spigotmc.org/resources/number/
 
  main: me.InfoPaste.NullMob.Main
- database: false
- softdepend: [Vault, WorldEdit]
 
  commands:
     nullmob:
-       description: Opems cosmetics menu
+       description: NullMob main commands
        aliases: [nm]
